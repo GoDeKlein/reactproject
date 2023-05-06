@@ -1,0 +1,11 @@
+.header {
+    background-color: #2b2151;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  
+  .item-count{
+    margin-right: 1rem;
+  }
