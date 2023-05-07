@@ -1,5 +1,5 @@
 import React from 'react';
-import './css//Body.css';
+import './css/Body.css';
 import Item from './Item';
 
 const Body = ({ items, onCheck, onItemRender }) => {
