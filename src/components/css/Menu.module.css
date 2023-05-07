@@ -1,0 +1,20 @@
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+}
+
+.menubutton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.menubutton:hover {
+  background-color: #45a049;
+}

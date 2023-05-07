@@ -1,0 +1,56 @@
+.item {
+  display: flex;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+.itemImage img {
+  width: 100px;
+  height: auto;
+  border-radius: 3px;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+
+.itemTitle,
+.itemAuthor,
+.itemCategory {
+  margin: 0;
+}
+
+.itemCheckbox {
+  display: flex;
+  align-items: center;
+}
+
+.itemCheckbox input {
+  margin-right: 5px;
+}
+
+.itemPrice {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.itemCheckbox {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.itemCheckbox input {
+  margin-right: 5px;
+}
+
+.itemCheckbox span {
+  margin-right: 10px;
+}

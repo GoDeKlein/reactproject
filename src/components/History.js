@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import UserHistoryContext from '../components/UserHistoryContext';
+import UserHistoryContext from './UserHistoryContext';
 
 function History() {
   const { userHistory } = useContext(UserHistoryContext);

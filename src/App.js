@@ -7,14 +7,15 @@ import Footer from './components/footer';
 import Menu from './components/menu';
 import ProductInfoWrapper from './components/ProductInfoWrapper';
 import itemsData from './components/Data';
-import ProductsContext from './components/ProductContext';
 import UserHistoryContext from './components/UserHistoryContext';
+import useItemsData from './components/useItemsData';
 
 // Import custom hooks
 import { useItems, useDisplayedItems, useShoppingList } from './components/customHooks';
 
 import History from './components/History';
-import Debug from './components/Debug';
+import AdminPage from './components/AdminPage';
+
 
 function AppHeader({ itemCount, displayedItemCount }) {
   const location = useLocation();
@@ -33,6 +34,8 @@ function AppHeader({ itemCount, displayedItemCount }) {
 
 function App() {
   const [items, setItems] = useItems(itemsData);
+  
+  const { addItem, removeItem } = useItemsData();
   const [displayedItems, setDisplayedItems] = useDisplayedItems(items);
   const [shoppingList, setShoppingList] = useShoppingList([]);
   const [categories] = useState(['All', 'Fiction', 'Non-fiction']);
@@ -115,12 +118,18 @@ function App() {
                   />
                 }
               />
-              <Route path="/history" element={<History />} />
+               <Route path="/history" element={<History />} />
+            <Route path="/animated-list" element={<AdminPage />} />
             </Routes>
-            <Debug />
+            
+            
+        
             <Footer />
+            
           </UserHistoryContext.Provider>
+          
         </Router>
+        
       </div>
     );
   }

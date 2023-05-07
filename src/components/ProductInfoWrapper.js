@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import ProductInfo from './ProductInfo';
+import ProductDetails from './ProductInfo';
 import UserHistoryContext from './UserHistoryContext';
 
-function ProductInfoWrapper({ items, handleCommentSubmit }) {
+function ProductDetailsWrapper({ items, handleCommentSubmit }) {
   const { id } = useParams();
 
   const product = useMemo(() => {
@@ -26,11 +26,11 @@ function ProductInfoWrapper({ items, handleCommentSubmit }) {
   }, [product, addUserHistoryEntry, userHistory]);
 
   return (
-    <ProductInfo
+    <ProductDetails
       product={product}
       handleCommentSubmit={handleCommentSubmit}
     />
   );
 }
 
-export default ProductInfoWrapper;
+export default ProductDetailsWrapper;

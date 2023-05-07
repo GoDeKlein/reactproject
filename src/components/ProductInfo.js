@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/ProductInfo.css';
+import './css/ProductInfo.module.css';
 import CurrencyConverter from './CurrencyConverter';
 
 class ProductInfo extends Component {
