@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './css/ProductInfo.module.css';
+import styles from './css/ProductInfo.module.css';
 import CurrencyConverter from './CurrencyConverter';
 
-class ProductInfo extends Component {
+
+class ProductDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,7 +26,7 @@ class ProductInfo extends Component {
     const exchangeRate = 0.0273;
 
     return (
-      <div className="product-details">
+      <div className={styles.productDetails}>
         <img src={product.cover} alt={product.name} />
         <div>
           <h2>{product.name}</h2>
@@ -46,4 +47,4 @@ class ProductInfo extends Component {
   }
 }
 
-export default ProductInfo;
+export default ProductDetails;

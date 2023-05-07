@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import styles from './css/Item.module.css';
+import styles from './styles/Item.module.css';
 import { Link } from 'react-router-dom';
 import AddToCartDialog from './AddToCartDialog';
 
-const ItemAdmin = ({ item, onCheck, onItemRender, onDelete }) => {
-    // ...
+const Item = ({ item, onCheck, onItemRender }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  
-  const handleDelete = () => {
-    onDelete(item.id);
-  };
 
+  useEffect(() => {
+    onItemRender();
+  }, [onItemRender]);
 
   const handleCheck = (e) => {
     onCheck(item.id, e.target.checked);
@@ -34,19 +32,9 @@ const ItemAdmin = ({ item, onCheck, onItemRender, onDelete }) => {
         <p className={styles.itemCategory}>{item.category}</p>
         <p className={styles.itemPrice}>{item.price.toFixed(2)} UAH</p>
         <div className={styles.itemCheckbox}>
-        
-    <div >
-      
-      <div className={styles.itemDetails}>
-        
-        <button className={styles.deleteButton} onClick={handleDelete}>
-          Delete
-        </button>
-      </div>
-    </div>
- 
+          <input type="checkbox" onChange={handleCheck} />
+          <span>Add to Cart</span>
         </div>
-        
         {isDialogOpen && (
           <AddToCartDialog
             productName={item.name}
@@ -56,4 +44,4 @@ const ItemAdmin = ({ item, onCheck, onItemRender, onDelete }) => {
         </div>
         );
         };
-        export default ItemAdmin;
+export default Item;
