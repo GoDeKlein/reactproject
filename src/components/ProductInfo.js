@@ -26,9 +26,12 @@ class ProductInfo extends Component {
 
     return (
       <div className="product-details">
-        <h2>{product.name}</h2>
-        <p>{product.description}</p>
-        <CurrencyConverter amount={product.price} rate={exchangeRate} currency="UAH" />
+        <img src={product.cover} alt={product.name} />
+        <div>
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+          <CurrencyConverter amount={product.price} rate={exchangeRate} currency="UAH" />
+        </div>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="comment">Add a comment:</label>
           <textarea
